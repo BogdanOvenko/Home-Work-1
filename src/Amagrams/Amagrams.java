@@ -10,18 +10,19 @@ import java.io.InputStreamReader;
 public class Amagrams {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder s = new StringBuilder(reader.readLine());
+        String s = reader.readLine();
 
         for (int i = 0; i < s.length(); i++ ) {
 
             if ((i-1)!= s.lastIndexOf(" ")) {
+
 
                 System.out.print(new StringBuilder(s.substring(i, s.indexOf(" ", i))).reverse() + " ");
                 i = s.indexOf(" ", i);
             }
             else if((i-1)== s.lastIndexOf(" ")) {
 
-                System.out.print(new StringBuilder(s.substring(i, s.length())).reverse() + " ");
+                System.out.print(new StringBuilder(s.substring(i, s.length())).reverse());
                 break;
             }
 
